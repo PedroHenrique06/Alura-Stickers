@@ -7,11 +7,7 @@ import java.io.InputStream;
 import javax.imageio.ImageIO;
 
 public class StickerGenerator {
-    public void create( InputStream inputStream, String filename) throws Exception{
-        
-        //InputStream inputStream =  new FileInputStream(new File("../image/filme.png"));
-        //inputStream = new URL("https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies_9.jpg").openStream();
-        
+    public void create( InputStream inputStream, String filename, String message) throws Exception{
         // Ler a imagem
         BufferedImage originalImage = ImageIO.read(inputStream);
 
@@ -29,11 +25,11 @@ public class StickerGenerator {
         // Configurar a fonte e cor da frase
         graphics.setColor(Color.YELLOW);
         
-        Font font = new Font(Font.SANS_SERIF, Font.BOLD , 64);
+        Font font = new Font(Font.SANS_SERIF, Font.BOLD , 40);
         graphics.setFont(font);
 
         // Escrever uma frase na nova imagem 
-        graphics.drawString("MY PRECIOUS", 200, newHeigth-100);
+        graphics.drawString(message, 200, (newHeigth-20));
 
         // Escrever a nova imagem em um arquivo 
         ImageIO.write(newImage, "png", new File(filename));
