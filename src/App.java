@@ -4,7 +4,7 @@ import java.util.List;
 
 public class App {
     public static void main(String[] args) throws Exception {  
-
+        // Fazer a conexão HTTP e buscar a lista de conteúdos
         // String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.json";
 
         // Extrator para a API da IMDB
